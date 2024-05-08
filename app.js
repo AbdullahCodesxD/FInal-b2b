@@ -2,7 +2,6 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
-const path = require('path');
 
 const errorController = require('./controllers/errorController');
 
@@ -22,10 +21,7 @@ dotenv.config({
 });
 
 const app = express();
-app.get('/', (req, res) => {
-  app.use(express.static(path.resolve(__dirname, 'frontend', 'build')));
-  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-});
+
 app.use(express.static(`./images`));
 app.use(express.json());
 
