@@ -4,7 +4,7 @@
   "description": "Backend for b2b",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "SET NODE_ENV=production&&node server.js",
     "start:prod": "SET NODE_ENV=production&&nodemon server.js"
   },
   "author": "",
