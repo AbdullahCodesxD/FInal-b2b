@@ -1,13 +1,18 @@
 const mongoose = require('mongoose');
 
 const app = require('./app');
-
+const cors = require('cors');
 const db = mongoose
   .connect(process.env.DB.replace('<password>', process.env.PASSWORD))
   .then((db) => {
     console.log('connected to database');
   });
 
+app.use(
+  cors({
+    origin: 'https://test-abdullahcodesxds-projects.vercel.app/',
+  }),
+);
 const server = app.listen(process.env.PORT || 3000, function () {
   console.log('Successfull');
 });
