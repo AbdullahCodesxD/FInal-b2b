@@ -8,11 +8,7 @@ const db = mongoose
     console.log('connected to database');
   });
 
-app.use(
-  cors({
-    origin: 'https://test-abdullahcodesxds-projects.vercel.app/',
-  }),
-);
+app.use(cors());
 const server = app.listen(process.env.PORT || 3000, function () {
   console.log('Successfull');
 });
