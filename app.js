@@ -15,13 +15,13 @@ const reviewRouter = require('./routes/reviewRoute');
 const chatRouter = require('./routes/chatRoute');
 const shopRouter = require('./routes/shopRoute');
 const quoteRouter = require('./routes/quoteRoute');
-
+const cors = require('cors');
 dotenv.config({
   path: './config.env',
 });
 
 const app = express();
-
+app.use(cors());
 app.use(express.static(`./images`));
 app.use(express.json());
 
