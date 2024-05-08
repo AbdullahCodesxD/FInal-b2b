@@ -21,15 +21,20 @@ dotenv.config({
 });
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: '*',
+    methods: ['POST', 'GET', 'PATCH', 'DELETE'],
+  }),
+);
 app.use(express.static(`./images`));
 app.use(express.json());
 
 app.use(cookieParser());
-app.use((req, res, next) => {
-  // console.log(req.cookies);
-  next();
-});
+// app.use((req, res, next) => {
+//   // console.log(req.cookies);
+//   next();
+// });
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
