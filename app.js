@@ -25,6 +25,7 @@ app.use(
   cors({
     origin: '*',
     methods: ['POST', 'GET', 'PATCH', 'DELETE'],
+    credentials: false,
   }),
 );
 app.use(express.static(`./images`));
